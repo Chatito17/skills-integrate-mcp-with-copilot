@@ -74,6 +74,12 @@ activities = {
         "schedule": "Fridays, 4:00 PM - 5:30 PM",
         "max_participants": 12,
         "participants": ["charlotte@mergington.edu", "henry@mergington.edu"]
+    },
+    "GitHub Skills": {
+        "description": "Learn GitHub fundamentals and collaboration skills",
+        "schedule": "Mondays, 5:00 PM - 6:00 PM",
+        "max_participants": 25,
+        "participants": []
     }
 }
 
@@ -130,3 +136,8 @@ def unregister_from_activity(activity_name: str, email: str):
     # Remove student
     activity["participants"].remove(email)
     return {"message": f"Unregistered {email} from {activity_name}"}
+    
+@app.get("/mona/hola")
+def mona_dice_hola():
+    """Endpoint para que Mona salude diciendo hola"""
+    return {"mona": "hola"}
